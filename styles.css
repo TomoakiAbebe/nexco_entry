@@ -1146,8 +1146,26 @@ header::before {
 }
 
 .award-item.grand-award {
-  border-left-color: var(--primary);
-  background: linear-gradient(135deg, var(--bg-primary) 0%, #FFF8F0 100%);
+  border-left: 6px solid #D4A017;
+  background: linear-gradient(135deg, #FFFBEA 0%, #FFF3C4 60%, #FFEAA0 100%);
+  box-shadow: 0 8px 32px rgba(212, 160, 23, 0.25), 0 2px 8px rgba(212, 160, 23, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.award-item.grand-award::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #D4A017, #F5C842, #D4A017);
+}
+
+.award-item.grand-award:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(212, 160, 23, 0.35), 0 4px 16px rgba(212, 160, 23, 0.2);
 }
 
 .award-item.excellent-award {
@@ -1170,7 +1188,10 @@ header::before {
 }
 
 .grand-award .award-rank .lucide {
-  color: var(--primary);
+  color: #D4A017;
+  filter: drop-shadow(0 2px 4px rgba(212, 160, 23, 0.4));
+  width: 40px;
+  height: 40px;
 }
 
 .excellent-award .award-rank .lucide {
@@ -1181,6 +1202,13 @@ header::before {
   font-size: var(--font-xl);
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.grand-award .rank-title {
+  font-size: var(--font-2xl);
+  font-weight: 900;
+  color: #8B6914;
+  letter-spacing: 0.03em;
 }
 
 .award-prize {
@@ -1199,6 +1227,11 @@ header::before {
   font-size: var(--font-3xl);
   font-weight: 900;
   color: var(--primary);
+}
+
+.grand-award .prize-amount {
+  color: #D4A017;
+  text-shadow: 0 2px 8px rgba(212, 160, 23, 0.3);
 }
 
 .prize-description {
@@ -1270,13 +1303,19 @@ header::before {
 
 /* 最優秀賞 */
 .result-award.grand-prize {
-  background: linear-gradient(135deg, #FFF8F0 0%, var(--bg-primary) 100%);
+  background: linear-gradient(135deg, #FFFBEA 0%, #FFF3C4 60%, #FFEAA0 100%);
   border-radius: 24px;
   padding: var(--spacing-xxl);
-  box-shadow: var(--shadow-medium);
-  border: 3px solid var(--primary);
+  box-shadow: 0 8px 32px rgba(212, 160, 23, 0.25), 0 2px 8px rgba(212, 160, 23, 0.15);
+  border: 3px solid #D4A017;
   position: relative;
   overflow: hidden;
+  transition: all var(--transition-normal) var(--ease-smooth);
+}
+
+.result-award.grand-prize:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(212, 160, 23, 0.35), 0 4px 16px rgba(212, 160, 23, 0.2);
 }
 
 .result-award.grand-prize::before {
@@ -1286,7 +1325,7 @@ header::before {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, var(--primary) 0%, #0BA98A 100%);
+  background: linear-gradient(90deg, #D4A017, #F5C842, #D4A017);
 }
 
 .award-header {
@@ -1301,14 +1340,16 @@ header::before {
 .award-header .lucide {
   width: 40px;
   height: 40px;
-  color: var(--primary);
+  color: #D4A017;
+  filter: drop-shadow(0 2px 4px rgba(212, 160, 23, 0.4));
 }
 
 .award-header .award-title {
   font-size: var(--font-2xl);
-  font-weight: 800;
-  color: var(--text-primary);
+  font-weight: 900;
+  color: #8B6914;
   margin: 0;
+  letter-spacing: 0.03em;
 }
 
 /* 優秀賞グループ */
@@ -1366,24 +1407,29 @@ header::before {
 }
 
 .catchphrase-label {
-  font-size: var(--font-sm);
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  color: var(--text-light);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
 }
 
 .catchphrase-text {
-  font-size: var(--font-xl);
-  font-weight: 700;
+  font-size: var(--font-2xl);
+  font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
+  padding-left: var(--spacing-sm);
+  border-left: 4px solid var(--primary);
 }
 
 .grand-prize .catchphrase-text {
-  font-size: var(--font-2xl);
-  font-weight: 800;
+  font-size: var(--font-3xl);
+  font-weight: 900;
+  color: #5a3e00;
+  border-left: 5px solid #D4A017;
+  padding-left: var(--spacing-md);
 }
 
 .penname {
